@@ -1,0 +1,727 @@
+{
+  "name": "Protocol",
+  "properties": [
+    {
+      "dataType": "date",
+      "name": "date",
+      "alias": "Date Of Birth",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Radio",
+      "name": "gender",
+      "alias": "Gender",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "Male",
+        "Female",
+        "Other"
+      ],
+      "unique": null,
+      "dynamic": true,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Email",
+      "name": "email",
+      "alias": "Email",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 255,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Password",
+      "name": "password",
+      "alias": "Password",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 255,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "String",
+      "name": "protocolName",
+      "alias": "Protocol name",
+      "required": false,
+      "ref": "string",
+      "unique": true,
+      "sequence": null,
+      "isArray": false,
+      "delimiter": null,
+      "array": false,
+      "minLength": 12,
+      "maxLength": 255
+    },
+    {
+      "dataType": "Date",
+      "name": "protocolDate",
+      "alias": "Protocol date",
+      "required": false,
+      "ref": "date",
+      "unique": null,
+      "sequence": null,
+      "isArray": false,
+      "delimiter": null,
+      "array": false,
+      "future": false,
+      "past": false,
+      "format": "MM/dd/yyyy"
+    },
+    {
+      "dataType": "String",
+      "name": "documentName",
+      "alias": "Document name",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 255,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Measure",
+      "name": "startingAmount",
+      "alias": "Starting amount",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "min": null,
+      "max": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false,
+      "values": [
+        "mg",
+        "µm",
+        "µg"
+      ]
+    },
+    {
+      "dataType": "String",
+      "name": "enrichmentStrategy",
+      "alias": "Enrichment strategy",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 255,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "labelFreeQuantitation",
+      "alias": "Label free quantitation",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "values": null,
+      "unique": null,
+      "dynamic": true,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "labeledQuantitation",
+      "alias": "Labeled quantitation",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "AminoxyTMT",
+        "DiART",
+        "DiLeu",
+        "Glyco-TMT",
+        "Hydrazide TMT",
+        "IodoTMT",
+        "IPTL",
+        "iTRAQ",
+        "iTRAQH",
+        "TMT",
+        "N/A"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "isobaricLabelingReagent",
+      "alias": "Isobaric labeling reagent",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "iTRAQ4",
+        "TMT10",
+        "TMT11",
+        "N/A"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "digestionReagent",
+      "alias": "Digestion reagent",
+      "required": true,
+      "array": true,
+      "delimiter": ",",
+      "values": null,
+      "unique": null,
+      "dynamic": true,
+      "sequence": null,
+      "isArray": true
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "alkylationReagent",
+      "alias": "Alkylation reagent",
+      "required": false,
+      "array": true,
+      "delimiter": ",",
+      "values": [
+        "Iodoacetamide (IAA)",
+        "2-chloroacetamide (TCEP)",
+        "tris(2-carboxyethyl)phosphine"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": true
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "chromatographyDimensionsCount",
+      "alias": "Chromatography dimensions count",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "1",
+        "2"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Number",
+      "name": "fractionsAnalyzedCount",
+      "alias": "Fractions Analyzed count",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "numberType": "Integer",
+      "min": null,
+      "max": null,
+      "multipleOf": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "columnType",
+      "alias": "Column type",
+      "required": false,
+      "array": true,
+      "delimiter": ",",
+      "values": null,
+      "unique": null,
+      "dynamic": true,
+      "sequence": null,
+      "isArray": true
+    },
+    {
+      "dataType": "Measure",
+      "name": "amountOnColumn",
+      "alias": "Amount on column",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "min": null,
+      "max": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false,
+      "values": [
+        "µg"
+      ]
+    },
+    {
+      "dataType": "Measure",
+      "name": "columnLength",
+      "alias": "Column length",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "min": null,
+      "max": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false,
+      "values": [
+        "cm"
+      ]
+    },
+    {
+      "dataType": "Measure",
+      "name": "columnInnerDiameter",
+      "alias": "Column inner diameter",
+      "required": false,
+      "ref": "measure",
+      "unique": null,
+      "sequence": null,
+      "isArray": false,
+      "delimiter": null,
+      "array": false,
+      "values": [
+        "µm"
+      ]
+    },
+    {
+      "dataType": "Measure",
+      "name": "particleSize",
+      "alias": "Particle size",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "min": null,
+      "max": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false,
+      "values": [
+        "µm"
+      ]
+    },
+    {
+      "dataType": "String",
+      "name": "particleType",
+      "alias": "Particle type",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 255,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Measure",
+      "name": "gradientLength",
+      "alias": "Gradient length",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "min": null,
+      "max": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false,
+      "values": [
+        "min"
+      ]
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "acquisitionType",
+      "alias": "Acquisition type",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "DDA",
+        "DIA"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "String",
+      "name": "instrumentMake",
+      "alias": "Instrument make",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 255,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "String",
+      "name": "instrumentModel",
+      "alias": "Instrument model",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 255,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "dissociationType",
+      "alias": "Dissociation type",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "HCD",
+        "CID",
+        "ETD",
+        "ECD"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Number",
+      "name": "ms1Resolution",
+      "alias": "MS1 resolution",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "numberType": "Integer",
+      "min": 10000,
+      "max": 200000,
+      "multipleOf": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Number",
+      "name": "ms2Resolution",
+      "alias": "MS2 resolution",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "numberType": "Integer",
+      "min": 10000,
+      "max": 200000,
+      "multipleOf": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "String",
+      "name": "ddaTopN",
+      "alias": "DDA topN",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "diaMultiplexing",
+      "alias": "Dia multiplexing",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "Yes",
+        "No",
+        "N/A"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "diaIms",
+      "alias": "Dia IMS",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "Yes",
+        "No",
+        "N/A"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Number",
+      "name": "normalizedCollisionEnergy",
+      "alias": "Normalized collision energy",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "numberType": "Integer",
+      "min": 15,
+      "max": 35,
+      "multipleOf": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "String",
+      "name": "lab",
+      "alias": "Program",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 255,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "reporterIonMSLevel",
+      "alias": "Reporter ion MS level",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "MS2",
+        "MS3",
+        "N/A"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "String",
+      "name": "protocolSubmitterID",
+      "alias": "Protocol submitter ID",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 100,
+      "pattern": null,
+      "unique": true,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "quantitationStrategy",
+      "alias": "Quantitation strategy",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "Isobaric label quantitation analysis",
+        "LC-MS label-free quantitation analysis",
+        "Spectral counting analysis",
+        "MS2-based label-free quantitation"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "experimentType",
+      "alias": "Experiment type",
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "Label Free",
+        "iTRAQ4",
+        "TMT10",
+        "TMT11"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "String",
+      "name": "enrichment",
+      "alias": "Enrichment",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "minLength": null,
+      "maxLength": 255,
+      "pattern": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "chromatographyType1D",
+      "alias": "1D Chromatography type",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "values": null,
+      "unique": null,
+      "dynamic": true,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "chromatographyType2D",
+      "alias": "2D Chromatography type",
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "values": null,
+      "unique": null,
+      "dynamic": true,
+      "sequence": null,
+      "isArray": false
+    }
+  ],
+  "refs": [
+    {
+      "dataType": "String",
+      "required": true,
+      "array": false,
+      "minLength": 12,
+      "maxLength": 255,
+      "unique": true,
+      "isArray": false
+    },
+    {
+      "dataType": "Number",
+      "name": "number",
+      "alias": null,
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "numberType": "Integer",
+      "min": null,
+      "max": null,
+      "multipleOf": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Date",
+      "required": false,
+      "array": false,
+      "future": false,
+      "past": false,
+      "isArray": false,
+      "format": "MM/dd/yyyy"
+    },
+    {
+      "dataType": "Measure",
+      "required": false,
+      "array": false,
+      "units": [
+        "µm"
+      ],
+      "isArray": false
+    },
+    {
+      "dataType": "Enumeration",
+      "name": "enumeration",
+      "alias": null,
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "unique": null,
+      "dynamic": false,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Boolean",
+      "name": "boolean",
+      "alias": null,
+      "required": false,
+      "array": false,
+      "delimiter": null,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    },
+    {
+      "dataType": "Currency",
+      "name": "currency",
+      "alias": null,
+      "required": true,
+      "array": false,
+      "delimiter": null,
+      "locale": "en_US",
+      "min": null,
+      "max": 1000,
+      "unique": null,
+      "sequence": null,
+      "isArray": false
+    }
+  ],
+  "primaryKey": "protocolName",
+  "foreignKeys": [
+    {
+      "sourceField": "lab",
+      "targetField": "name",
+      "targetEntity": "Lab"
+    }
+  ]
+}
