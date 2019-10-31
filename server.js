@@ -1,14 +1,18 @@
 /**
  * Created by rgarg on 12-09-2019.
  */
-const express = require('express');
+const express = require('express');  // node js web app framework
+const bodyParser = require('body-parser');  //  package that can be used to handle JSON requests.
+
 const cors = require('cors');
 const graphqlHTTP = require("express-graphql");
-const { makeExecutableSchema } = require("graphql-tools");
 
-const bodyParser = require('body-parser');
-const typeDefs = require("./graphQl/schema").Schema;
-const resolvers = require("./graphQl/resolvers").Resolvers;
+const { makeExecutableSchema } = require("graphql-tools");
+// const typeDefs = require("./graphQl/schema").Schema;
+// const resolvers = require("./graphQl/resolvers").Resolvers;
+const typeDefs = require("./graphQl/dynamicSchema").dynamicSchema;
+const resolvers = require("./graphQl/dynamicResolvers").dynamicResolvers;
+
 const schema = makeExecutableSchema({
     typeDefs,
     resolvers,
@@ -34,9 +38,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(
-    "/graphql",
-    graphqlHTTP(request => ({
+app.use("/graphql", graphqlHTTP(request => ({
         schema: schema,
         graphiql: true
     }))
